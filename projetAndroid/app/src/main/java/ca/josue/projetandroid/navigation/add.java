@@ -23,6 +23,6 @@ public class add extends Fragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        ((MainActivity)context).setTitle("Add");
+        ((MainActivity)context).setTitle(R.string.add);
     }
 }

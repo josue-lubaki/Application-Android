@@ -23,6 +23,6 @@ public class profile extends Fragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        ((MainActivity)context).setTitle("Profile");
+        ((MainActivity)context).setTitle(R.string.profile);
     }
 }

@@ -23,6 +23,6 @@ public class message extends Fragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        ((MainActivity)context).setTitle("Message");
+        ((MainActivity)context).setTitle(R.string.message);
     }
 }
