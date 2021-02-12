@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -23,9 +24,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        BottomNavigationView nav_bar = findViewById(R.id.nav_bar);
+        nav_bar.setOnNavigationItemReselectedListener(this);
+        showFragment(home.class);
     }
 
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onNavigationItemReselected(@NonNull MenuItem item) {
         item.setChecked(true);
