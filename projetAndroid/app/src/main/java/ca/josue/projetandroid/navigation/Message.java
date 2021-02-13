@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import ca.josue.projetandroid.MainActivity;
 import ca.josue.projetandroid.R;
 
-public class message extends Fragment {
+public class Message extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
