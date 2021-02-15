@@ -16,7 +16,7 @@ import ca.josue.projetandroid.navigation.Home;
 import ca.josue.projetandroid.navigation.Message;
 import ca.josue.projetandroid.navigation.Profile;
 
-public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemReselectedListener {
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private Fragment currentFragment = null;
 
@@ -25,14 +25,14 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BottomNavigationView nav_bar = findViewById(R.id.nav_bar);
-        nav_bar.setOnNavigationItemReselectedListener(this);
+        nav_bar.setOnNavigationItemSelectedListener(this);
         showFragment(Home.class);
     }
 
 
     @SuppressLint("NonConstantResourceId")
     @Override
-    public void onNavigationItemReselected(@NonNull MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         item.setChecked(true);
         switch(item.getItemId()){
             case R.id.optionHome:
@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 showFragment(Profile.class);
                 break;
         }
+        return false;
     }
 
     private void showFragment(Class<? extends Fragment> fragment) {
