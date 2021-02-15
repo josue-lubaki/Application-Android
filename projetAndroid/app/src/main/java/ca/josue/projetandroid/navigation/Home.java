@@ -3,8 +3,12 @@ package ca.josue.projetandroid.navigation;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -94,6 +98,7 @@ public class Home extends Fragment {
         listView.setAdapter(adapter);
         adapter.addProduct(getProductModels());
         adapter.notifyDataSetChanged();
+        Toast.makeText(getContext(), adapter.getItemCount() + " Articles Disponibles", Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -101,4 +106,6 @@ public class Home extends Fragment {
         super.onAttach(context);
         ((MainActivity)context).setTitle(R.string.home);
     }
+
+
 }

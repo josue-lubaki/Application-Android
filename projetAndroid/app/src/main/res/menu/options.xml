@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/optionPropos"
+        android:title="@string/propos"
+        android:icon="@drawable/ic_help"
+        android:enabled="true"
+        />
+
+    <item
+        android:id="@+id/optionHelp"
+        android:title="@string/help"
+        android:icon="@drawable/ic_help"
+        android:enabled="true"/>
+</menu>

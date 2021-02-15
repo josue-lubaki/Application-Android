@@ -5,4 +5,6 @@
     <string name="message">Message</string>
     <string name="profile">Profile</string>
     <string name="description">image</string>
+    <string name="propos">Propos</string>
+    <string name="help">Help</string>
 </resources>
