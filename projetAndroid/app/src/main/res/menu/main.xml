@@ -7,15 +7,21 @@
         android:enabled="true"/>
 
     <item
+        android:id="@+id/optionMessage"
+        android:title="@string/message"
+        android:icon="@drawable/ic_message"
+        android:enabled="true"/>
+
+    <item
         android:id="@+id/optionAdd"
         android:title="@string/add"
         android:icon="@drawable/ic_add"
         android:enabled="true"/>
 
     <item
-        android:id="@+id/optionMessage"
-        android:title="@string/message"
-        android:icon="@drawable/ic_message"
+        android:id="@+id/optionContact"
+        android:title="@string/contact"
+        android:icon="@drawable/ic_contact"
         android:enabled="true"/>
 
     <item
