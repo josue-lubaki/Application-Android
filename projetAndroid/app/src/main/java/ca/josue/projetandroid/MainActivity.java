@@ -16,6 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import ca.josue.projetandroid.fragments.Help;
 import ca.josue.projetandroid.fragments.Propos;
 import ca.josue.projetandroid.navigation.Add;
+import ca.josue.projetandroid.navigation.Contact;
 import ca.josue.projetandroid.navigation.Home;
 import ca.josue.projetandroid.navigation.Message;
 import ca.josue.projetandroid.navigation.Profile;
@@ -45,6 +46,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 break;
             case R.id.optionMessage:
                 showFragment(Message.class);
+                break;
+            case R.id.optionContact:
+                showFragment(Contact.class);
                 break;
             case R.id.optionProfile:
                 showFragment(Profile.class);
