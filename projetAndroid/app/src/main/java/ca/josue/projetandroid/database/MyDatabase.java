@@ -14,7 +14,7 @@ import java.util.concurrent.Executors;
 import ca.josue.projetandroid.database.dao.PersonneDao;
 import ca.josue.projetandroid.model.Personne;
 
-@Database(entities = {Personne.class}, version = 1, exportSchema = false)
+@Database(entities = {Personne.class}, version = 2, exportSchema = false)
 public abstract class MyDatabase extends RoomDatabase {
     public static MyDatabase INSTANCE;
     public abstract PersonneDao personneDao();
@@ -54,9 +54,9 @@ public abstract class MyDatabase extends RoomDatabase {
                 PersonneDao personneDao = INSTANCE.personneDao();
 
                 personneDao.deleteAllPersonnes();
-                personneDao.insert(new Personne("Prenom 1", "Nom 1", "Profession 1"));
-                personneDao.insert(new Personne("Prenom 2", "Nom 2", "Profession 2"));
-                personneDao.insert(new Personne("Prenom 3", "Nom 2", "Profession 3"));
+                personneDao.insert(new Personne("Toto", "Tata", "Etudiant"));
+                personneDao.insert(new Personne("John", "Doe", "Professeur"));
+                personneDao.insert(new Personne("Josue", "Lubaki", "Developpeur"));
             });
         }
     };
