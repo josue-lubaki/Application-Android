@@ -1,5 +1,6 @@
 package ca.josue.projetandroid.navigation;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -98,18 +99,14 @@ public class Contact extends AppCompatActivity {
         return true;
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.optionHomeContact_: { // Bouton home
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
-                finish();
-                Log.i(LOG_TAG, "bouton annuler - fonctionnel");
-                return true;
-            }
-            case R.id.save_personne:
-                item.getItemId();
+            case R.id.optionHomeContact_: // Bouton enregistrer
+                Intent intent_ = new Intent(this, MainActivity.class);
+                startActivity(intent_);
+                Log.i(LOG_TAG, "bouton home - fonctionnel");
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

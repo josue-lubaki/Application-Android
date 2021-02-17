@@ -32,6 +32,7 @@ public class Add extends AppCompatActivity {
     private EditText editTextFname;
     private EditText editTextLname;
     private EditText editTextProfession;
+    private MaterialButton btn_enregistrer, btn_annuler;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,6 +42,17 @@ public class Add extends AppCompatActivity {
         editTextFname = findViewById(R.id.edit_text_fname);
         editTextLname = findViewById(R.id.edit_text_lname);
         editTextProfession = findViewById(R.id.edit_text_profession);
+        btn_enregistrer = findViewById(R.id.enregistrer);
+        btn_annuler = findViewById(R.id.annuler);
+
+        /* Evenement au Click */
+        btn_enregistrer.setOnClickListener(e -> savePersonne());
+        btn_annuler.setOnClickListener(d -> {
+            Intent _intent = new Intent(this, Contact.class);
+            startActivity(_intent);
+            Log.i(LOG_TAG, "bouton annuler - fonctionnel");
+        });
+
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
         setTitle(R.string.add);
     }
@@ -56,18 +68,9 @@ public class Add extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.save_personne:
-            case R.id.enregistrer: // Bouton enregistrer
-                savePersonne();
-                return true;
-            case R.id.annuler: // Bouton enregistrer
-                Intent intent = new Intent(this, Contact.class);
+            case R.id.optionHomeContact_: // Bouton Home
+                Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
-                Log.i(LOG_TAG, "bouton annuler - fonctionnel");
-                return true;
-            case R.id.optionHomeContact_: // Bouton enregistrer
-                Intent intent_ = new Intent(this, MainActivity.class);
-                startActivity(intent_);
                 Log.i(LOG_TAG, "bouton home - fonctionnel");
                 return true;
             default:
@@ -76,7 +79,7 @@ public class Add extends AppCompatActivity {
 
     }
 
-    public void savePersonne() {
+    private void savePersonne() {
 
         /* Lier avec les champs des données */
         String fname = editTextFname.getText().toString();

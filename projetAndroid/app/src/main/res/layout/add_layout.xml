@@ -64,7 +64,7 @@
             android:layout_alignParentEnd="true"
             app:backgroundTint="#266127"
             android:textColor="@color/white"
-            android:onClick="myLogin"
+            android:onClick="save"
             android:text="@string/enregistrer"/>
 
         <com.google.android.material.button.MaterialButton
