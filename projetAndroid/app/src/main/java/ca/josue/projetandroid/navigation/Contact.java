@@ -89,8 +89,11 @@ public class Contact extends AppCompatActivity {
         }
     }
 
+
     /**
-     * Retour au Menu Principal
+     * Liaison de Menu.xml des options à l'Activité courante
+     *
+     * Return boolean
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -99,18 +102,23 @@ public class Contact extends AppCompatActivity {
         return true;
     }
 
+
+    /**
+     * Fonction permettant de Lier le Menu "Home" lorsqu'on se trouve sur l'Activité <Contact>
+     * Nous permet de revenir sur Le HomePage
+     *
+     * Return boolean
+     * */
     @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.optionHomeContact_: // Bouton enregistrer
-                Intent intent_ = new Intent(this, MainActivity.class);
-                startActivity(intent_);
-                Log.i(LOG_TAG, "bouton home - fonctionnel");
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == R.id.optionHomeContact_) { // Bouton enregistrer
+            Intent intent_ = new Intent(this, MainActivity.class);
+            startActivity(intent_);
+            Log.i(LOG_TAG, "bouton home - fonctionnel");
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 
 }

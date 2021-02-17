@@ -11,8 +11,8 @@ import ca.josue.projetandroid.database.dao.PersonneDao;
 import ca.josue.projetandroid.model.Personne;
 
 public class PersonneRepository {
-    private PersonneDao personneDao;
-    private LiveData<List<Personne>> allPersonnes;
+    private final PersonneDao personneDao;
+    private final LiveData<List<Personne>> allPersonnes;
 
     public PersonneRepository(Application application) {
         // relier la Base de donnees
@@ -37,7 +37,7 @@ public class PersonneRepository {
     }
 
     public  void deleteAllPersonnes(){
-        MyDatabase.databaseWriteExecutor.execute(()-> personneDao.deleteAllPersonnes());
+        MyDatabase.databaseWriteExecutor.execute(personneDao::deleteAllPersonnes);
     }
 
     public LiveData<List<Personne>> getAllPersonnes() {

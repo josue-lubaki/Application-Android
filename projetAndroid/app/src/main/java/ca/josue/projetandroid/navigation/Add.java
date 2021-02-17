@@ -9,7 +9,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -32,7 +31,6 @@ public class Add extends AppCompatActivity {
     private EditText editTextFname;
     private EditText editTextLname;
     private EditText editTextProfession;
-    private MaterialButton btn_enregistrer, btn_annuler;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,16 +40,12 @@ public class Add extends AppCompatActivity {
         editTextFname = findViewById(R.id.edit_text_fname);
         editTextLname = findViewById(R.id.edit_text_lname);
         editTextProfession = findViewById(R.id.edit_text_profession);
-        btn_enregistrer = findViewById(R.id.enregistrer);
-        btn_annuler = findViewById(R.id.annuler);
+        MaterialButton btn_enregistrer = findViewById(R.id.enregistrer);
+        MaterialButton btn_annuler = findViewById(R.id.annuler);
 
         /* Evenement au Click */
         btn_enregistrer.setOnClickListener(e -> savePersonne());
-        btn_annuler.setOnClickListener(d -> {
-            Intent _intent = new Intent(this, Contact.class);
-            startActivity(_intent);
-            Log.i(LOG_TAG, "bouton annuler - fonctionnel");
-        });
+        btn_annuler.setOnClickListener(this::cancelSave);
 
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
         setTitle(R.string.add);
@@ -64,21 +58,40 @@ public class Add extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Fonction permettant de Lier le Menu "Home" lorsqu'on se trouve sur l'Activité <Add>
+     * Nous permet de revenir sur Le HomePage
+     *
+     * Return boolean
+     * */
     @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.optionHomeContact_: // Bouton Home
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
-                Log.i(LOG_TAG, "bouton home - fonctionnel");
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == R.id.optionHomeContact_) { // Bouton Home
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            Log.i(LOG_TAG, "bouton home - fonctionnel");
+            return true;
         }
-
+        return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Fonction permettant de Canceler l'inscription et Revenir sur la Page de contact
+     * Return void
+     * */
+    public void cancelSave(View view) {
+        Intent _intent = new Intent(this, Contact.class);
+        startActivity(_intent);
+        Log.i(LOG_TAG, "bouton annuler - fonctionnel");
+    }
+
+    /**
+     * Fonction permettant d'enregistrer un Contact en cliquant sur le button "Enregistrer"
+     * Et Revenir sur la Page de contact.
+     *
+     * Return void
+     * */
     private void savePersonne() {
 
         /* Lier avec les champs des données */
@@ -105,4 +118,6 @@ public class Add extends AppCompatActivity {
 
         Log.i(LOG_TAG, "Transfert des données effectuées avec succès.");
     }
+
+
 }

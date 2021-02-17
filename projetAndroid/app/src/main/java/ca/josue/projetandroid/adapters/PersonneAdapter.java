@@ -8,8 +8,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,11 +44,11 @@ public class PersonneAdapter extends RecyclerView.Adapter<PersonneAdapter.Person
         notifyDataSetChanged();
     }
 
-    class PersonneHolder extends RecyclerView.ViewHolder{
+    static class PersonneHolder extends RecyclerView.ViewHolder{
         // Faire Correspondre les champs
-        private TextView tvFname;
-        private TextView tvLname;
-        private TextView tvProfession;
+        private final TextView tvFname;
+        private final TextView tvLname;
+        private final TextView tvProfession;
 
         public PersonneHolder(@NonNull View itemView) {
             super(itemView);

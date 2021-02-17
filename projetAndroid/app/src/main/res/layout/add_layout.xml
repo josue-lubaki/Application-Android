@@ -64,7 +64,6 @@
             android:layout_alignParentEnd="true"
             app:backgroundTint="#266127"
             android:textColor="@color/white"
-            android:onClick="save"
             android:text="@string/enregistrer"/>
 
         <com.google.android.material.button.MaterialButton
@@ -75,7 +74,7 @@
             android:layout_marginEnd="12dp"
             app:backgroundTint="#E4B31616"
             android:textColor="@color/white"
-            android:onClick="MenuConnexion"
+            android:onClick="cancelSave"
             android:layout_toStartOf="@id/enregistrer"
             android:text="@string/annuler"/>
 
