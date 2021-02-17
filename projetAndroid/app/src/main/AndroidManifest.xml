@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetAndroid">
-        <activity android:name=".MainActivity">
+
+        <activity android:name=".navigation.Contact"
+            android:launchMode="singleTop" />
+
+        <activity android:name=".navigation.Add"
+            android:parentActivityName=".navigation.Contact"/>
+
+        <activity android:name=".MainActivity"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

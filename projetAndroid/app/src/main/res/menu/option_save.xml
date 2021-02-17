@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/save_personne"
+        android:icon="@drawable/ic_save"
+        android:title="@string/enregistrer"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/optionHomeContact_"
+        android:title="@string/home"
+        android:icon="@drawable/ic_home_white"
+        app:showAsAction="ifRoom"
+        android:enabled="true"/>
+</menu>

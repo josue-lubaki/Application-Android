@@ -8,4 +8,9 @@
     <string name="propos">Propos</string>
     <string name="help">Help</string>
     <string name="contact">contact</string>
+    <string name="profession">Profession</string>
+    <string name="prenom">Prenom</string>
+    <string name="nom">Nom</string>
+    <string name="annuler">Annuler</string>
+    <string name="enregistrer">Enregistrer</string>
 </resources>

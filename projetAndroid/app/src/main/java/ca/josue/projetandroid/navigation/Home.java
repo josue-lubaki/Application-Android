@@ -2,6 +2,7 @@ package ca.josue.projetandroid.navigation;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,10 +23,13 @@ import java.util.List;
 
 import ca.josue.projetandroid.MainActivity;
 import ca.josue.projetandroid.R;
+import ca.josue.projetandroid.adapters.PersonneAdapter;
 import ca.josue.projetandroid.adapters.ProductAdapter;
 import ca.josue.projetandroid.model.Product;
+import ca.josue.projetandroid.viewmodel.PersonneViewModel;
 
 public class Home extends Fragment {
+    private static final String LOG_TAG = "homeModel" ;
     private RecyclerView listView;
     private ProductAdapter adapter;
 

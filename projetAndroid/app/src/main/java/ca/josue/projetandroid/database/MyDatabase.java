@@ -14,7 +14,7 @@ import java.util.concurrent.Executors;
 import ca.josue.projetandroid.database.dao.PersonneDao;
 import ca.josue.projetandroid.model.Personne;
 
-@Database(entities = {Personne.class}, version = 2, exportSchema = false)
+@Database(entities = {Personne.class}, version = 1, exportSchema = false)
 public abstract class MyDatabase extends RoomDatabase {
     public static MyDatabase INSTANCE;
     public abstract PersonneDao personneDao();
