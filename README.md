@@ -12,3 +12,4 @@
 * Implementation du RecyclerView présentant les produits sur le Menu "Home" et "Contact"
 * échanges de données entre différent fragment et Activity via la methode putExtra()
 * Récuperation de données à partir du SQLite incorporé.
+<img src="https://github.com/josue-lubaki/Application-Android/blob/main/projetAndroid/app/src/images/myScreen.jpg" width="200" style="max-width:100%;">
