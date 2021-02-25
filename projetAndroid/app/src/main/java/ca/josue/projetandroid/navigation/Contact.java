@@ -12,14 +12,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import java.util.List;
 
 import ca.josue.projetandroid.MainActivity;
 import ca.josue.projetandroid.R;
@@ -32,6 +29,7 @@ public class Contact extends AppCompatActivity {
     private RecyclerView recycler_view_contact;
     public static final int ADD_PERSONNE_REQUEST = 1;
     private final String LOG_TAG = "contantModel";
+    private PersonneAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +50,7 @@ public class Contact extends AppCompatActivity {
         recycler_view_contact.setLayoutManager(new LinearLayoutManager(this));
         recycler_view_contact.setHasFixedSize(true);
 
-        PersonneAdapter adapter = new PersonneAdapter();
+        adapter = new PersonneAdapter();
         recycler_view_contact.setAdapter(adapter);
 
         personneViewModel = new ViewModelProvider(this).get(PersonneViewModel.class);

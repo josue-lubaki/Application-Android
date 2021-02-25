@@ -97,11 +97,14 @@ public class Home extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         listView = view.findViewById(R.id.list_all_items);
         listView.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter = new ProductAdapter(getActivity());
         listView.setAdapter(adapter);
         adapter.addProduct(getProductModels());
+
+
         adapter.notifyDataSetChanged();
         Toast.makeText(getContext(), adapter.getItemCount() + " Articles Disponibles", Toast.LENGTH_LONG).show();
     }
